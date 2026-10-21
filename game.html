@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Well Stacked: build a clean-water well one layer at a time.">
+  <title>Play Well Stacked | Clean water for all</title>
+  <link rel="icon" type="image/png" href="img/cw_logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game-shell">
+    <header class="topbar site-header">
+      <a class="brand-mark" href="index.html" aria-label="Well Stacked home">
+        <img src="img/cw_logo_horizontal.png" alt="charity: water logo">
+        <span>Well <strong>Stacked</strong></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="game.html?autostart=1">Play</a>
+        <a class="donate-link" href="https://www.charitywater.org/donate" target="_blank" rel="noopener">Donate</a>
+      </nav>
+      <details class="mobile-nav">
+        <summary aria-label="Open navigation menu">☰</summary>
+        <div class="mobile-nav-panel">
+          <a href="game.html?autostart=1">Play</a>
+          <a class="donate-link" href="https://www.charitywater.org/donate" target="_blank" rel="noopener">Donate</a>
+        </div>
+      </details>
+      <div class="top-actions">
+        <button class="icon-button" id="pauseButton" type="button" aria-label="Pause game" title="Pause game">Ⅱ</button>
+        <button class="reset-button" id="resetButton" type="button">Reset</button>
+      </div>
+    </header>
+
+    <section class="game-layout" aria-label="Well Stacked game">
+      <aside class="side-panel left-panel">
+        <div class="stat-card score-card">
+          <span class="eyebrow">Score</span>
+          <strong id="score">0</strong>
+          <span class="score-note">points for every drop</span>
+        </div>
+        <div class="stat-card">
+          <span class="eyebrow">Layers</span>
+          <div class="layer-readout"><strong id="layers">0</strong><span>/ 10</span></div>
+          <div class="progress-track" aria-label="Well completion"><div id="progressBar" class="progress-bar"></div></div>
+          <span id="layerMessage" class="layer-message">The first stone is yours.</span>
+        </div>
+        <div class="tip-card">
+          <span class="tip-icon">✦</span>
+          <p>Clear a full row to lay another layer on the well.</p>
+        </div>
+      </aside>
+
+      <section class="board-wrap">
+        <div class="board-heading">
+          <div><span class="eyebrow">The build site</span><h1>Stack with purpose.</h1></div>
+          <div id="timer" class="timer" aria-live="polite">3:00</div>
+        </div>
+        <div class="board-stage">
+          <div id="board" class="board" role="grid" aria-label="Well Stacked game board">
+            <div id="ghostPiece" class="piece-layer ghost-layer" aria-hidden="true"></div>
+            <div id="activePiece" class="piece-layer active-layer" aria-hidden="true"></div>
+          </div>
+          <div id="overlay" class="overlay" role="dialog" aria-modal="true" aria-labelledby="overlayTitle">
+            <div class="overlay-card">
+              <img class="overlay-logo" src="img/cw_logo.png" alt="charity: water logo">
+              <p class="eyebrow" id="overlayKicker">A little well goes a long way</p>
+              <h2 id="overlayTitle">Well <em>Stacked</em></h2>
+              <p id="overlayText">Stack stones, clear rows, and build 10 layers before the water clock runs dry.</p>
+              <div class="instructions">
+                <span>← → move</span><span>·</span><span>↑ rotate</span><span>·</span><span>↓ soft drop</span><span>·</span><span>Space drop</span><span>·</span><span>P pause</span>
+              </div>
+              <div id="finalStats" class="final-stats" hidden></div>
+              <button id="startButton" class="start-button" type="button">Start building <span>→</span></button>
+            </div>
+          </div>
+        </div>
+        <div class="controls" aria-label="Touch controls">
+          <button class="control-button" data-action="left" type="button" aria-label="Move left">←</button>
+          <button class="control-button rotate-button" data-action="rotate" type="button" aria-label="Rotate">↻</button>
+          <button class="control-button" data-action="right" type="button" aria-label="Move right">→</button>
+          <button class="control-button" data-action="down" type="button" aria-label="Soft drop">↓</button>
+          <button class="control-button drop-button" data-action="drop" type="button"><span>Drop</span> <b>↡</b></button>
+        </div>
+      </section>
+
+      <aside class="side-panel right-panel">
+        <div class="next-card">
+          <div class="card-heading"><span class="eyebrow">Next block</span><span class="block-count" id="blockCount">01</span></div>
+          <div id="nextPreview" class="preview-grid" aria-label="Next block preview"></div>
+          <p>Every stone has a place.</p>
+        </div>
+        <div class="legend-card">
+          <span class="eyebrow">Field notes</span>
+          <div class="legend-row"><span class="legend-dot stone-dot"></span> Stone</div>
+          <div class="legend-row"><span class="legend-dot mud-dot"></span> Muddy block <b>-25</b></div>
+          <div class="legend-row"><span class="legend-dot clear-dot"></span> Clean water ahead</div>
+        </div>
+      </aside>
+    </section>
+
+    <footer class="site-footer">
+      <a class="brand-mark" href="index.html" aria-label="Well Stacked home">
+        <img src="img/cw_logo_horizontal.png" alt="charity: water logo">
+        <span>Well <strong>Stacked</strong></span>
+      </a>
+      <a href="https://www.charitywater.org" target="_blank" rel="noopener">charitywater.org ↗</a>
+      <p>Student project, not affiliated with charity: water.</p>
+    </footer>
+  </main>
+
+  <div id="confetti" class="confetti" aria-hidden="true"></div>
+  <script src="script.js"></script>
+</body>
+</html>

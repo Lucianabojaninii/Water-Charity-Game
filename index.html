@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Well Stacked is a student project inspired by charity: water's mission to bring clean water to everyone.">
+  <title>Well Stacked | Clean water for everyone</title>
+  <link rel="icon" type="image/png" href="img/cw_logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="home-page">
+  <header class="topbar home-header">
+    <a class="brand-mark" href="index.html" aria-label="Well Stacked home">
+      <img src="img/cw_logo_horizontal.png" alt="charity: water logo">
+      <span>Well <strong>Stacked</strong></span>
+    </a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="game.html?autostart=1">Play</a>
+      <a class="donate-link" href="https://www.charitywater.org/donate" target="_blank" rel="noopener">Donate</a>
+    </nav>
+    <details class="mobile-nav">
+      <summary aria-label="Open navigation menu">☰</summary>
+      <div class="mobile-nav-panel">
+        <a href="game.html?autostart=1">Play</a>
+        <a class="donate-link" href="https://www.charitywater.org/donate" target="_blank" rel="noopener">Donate</a>
+      </div>
+    </details>
+  </header>
+
+  <main>
+    <section class="home-hero" aria-labelledby="hero-title">
+      <div class="hero-content">
+        <p class="section-kicker">A little well goes a long way</p>
+        <div class="hero-title-row">
+          <h1 id="hero-title">Clean water for everyone.</h1>
+        </div>
+        <p class="hero-copy">Water projects give communities a safer, more reliable way to collect clean water.</p>
+        <a class="primary-button" href="game.html?autostart=1">Play Well Stacked <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="hero-visual" aria-label="charity: water logo preview">
+        <img class="hero-photo" src="img/cw_logo.png" alt="charity: water logo">
+      </div>
+    </section>
+
+    <section class="game-band reveal" aria-labelledby="game-band-title">
+      <div><p class="section-kicker">Well Stacked</p><h2 id="game-band-title">Every row you clear builds a layer of the well.</h2></div>
+      <a class="primary-button" href="game.html?autostart=1">Start Building <span aria-hidden="true">→</span></a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand-mark" href="index.html" aria-label="Well Stacked home">
+      <img src="img/cw_logo_horizontal.png" alt="charity: water logo">
+      <span>Well <strong>Stacked</strong></span>
+    </a>
+    <a href="https://www.charitywater.org" target="_blank" rel="noopener">charitywater.org ↗</a>
+    <p>Student project, not affiliated with charity: water.</p>
+  </footer>
+  <script src="home.js"></script>
+</body>
+</html>
